@@ -2,11 +2,11 @@
 
 A comprehensive science learning agent built using Google's Agent Development Kit (ADK) that applies all concepts from the 5-Day AI Agents Intensive Course.
 
-## 🎯 Project Overview
+## Project Overview
 
 Science2U is an intelligent tutoring agent designed for K-12 students that provides personalized science learning experiences across 10 different science topics. The agent uses advanced multi-agent architecture and implements cutting-edge AI agent concepts.
 
-## 🧪 Available Science Topics
+## Available Science Topics
 
 1. **Chemistry** - Atomic structure, chemical bonds, reactions
 2. **Environmental Science** - Ecosystems, climate change, sustainability  
@@ -19,7 +19,7 @@ Science2U is an intelligent tutoring agent designed for K-12 students that provi
 9. **Forensic Analysis** - Crime scene investigation, evidence analysis
 10. **Oceanography** - Marine biology, ocean currents, marine ecosystems
 
-## 🤖 Agent Architecture & Features
+## Agent Architecture & Features
 
 ### Multi-Agent System Implementation
 - **Sequential Agents** - Coordinated workflow for question generation → evaluation → document creation
@@ -61,7 +61,7 @@ Science2U is an intelligent tutoring agent designed for K-12 students that provi
 - Context-aware question generation
 - Adaptive difficulty based on student performance
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Python 3.8+
@@ -85,7 +85,7 @@ pip install -r requirements.txt
 python science2u_agent.py
 ```
 
-## 💡 Usage Example
+## Usage Example
 
 ```
 🧪 Welcome to Science2U - Your K-12 Science Learning Companion! 🧪
@@ -115,7 +115,7 @@ Question 1: What is the chemical formula for water?
 [Session continues with adaptive questioning and learning...]
 ```
 
-## 🏗️ Technical Architecture
+## Technical Architecture
 
 ### Agent Hierarchy
 ```
@@ -130,39 +130,7 @@ Science2UCoordinator (Main Agent)
     └── ProgressEvaluator
 ```
 
-### Key Components Applied from 5-Day Course
-
-#### Day 1: Agent Fundamentals & Multi-Agent Systems
-- ✅ Single agent with tools (Google Search equivalent for question generation)
-- ✅ Multi-agent coordination with specialized roles
-- ✅ Sequential workflow for learning pipeline
-- ✅ Loop agents for iterative question-answer cycles
-
-#### Day 2: Agent Tools
-- ✅ Custom Function Tools for progress tracking and question management
-- ✅ Agent Tools - using specialized agents as tools
-- ✅ Built-in tools integration (memory tools)
-- ✅ Tool context for state management
-
-#### Day 3: Sessions & Memory
-- ✅ Session management for conversation continuity
-- ✅ Memory service for long-term learning retention
-- ✅ State management for progress tracking
-- ✅ Context compaction for efficient memory usage
-
-#### Day 4: Observability
-- ✅ LoggingPlugin for comprehensive monitoring
-- ✅ Debug capabilities for troubleshooting
-- ✅ Performance tracking and analysis
-- ✅ Error handling and recovery
-
-#### Day 5: Advanced Features
-- ✅ Production-ready architecture
-- ✅ Scalable multi-agent design
-- ✅ Comprehensive error handling
-- ✅ Educational domain expertise
-
-## 🎓 Educational Benefits
+## Educational Benefits
 
 ### For Students:
 - **Personalized Learning** - Adapts to individual learning pace and style
@@ -177,7 +145,7 @@ Science2UCoordinator (Main Agent)
 - **Progress Monitoring** - Track student learning over time
 - **Adaptive Content** - Questions adjust to student level
 
-## 🔧 Customization Options
+## Customization Options
 
 ### Adding New Topics:
 1. Add topic to `self.topics` list
@@ -193,14 +161,14 @@ Science2UCoordinator (Main Agent)
 - Implement additional tools for enhanced functionality
 - Integrate external APIs for real-time science data
 
-## 📊 Performance Features
+## Performance Features
 
 - **Efficient Question Management** - Smart question selection and rotation
 - **Memory Optimization** - Context compaction for long sessions
 - **Error Recovery** - Graceful handling of API failures
 - **Scalable Architecture** - Supports multiple concurrent users
 
-## 🛠️ Development Notes
+## Development Notes
 
 ### Code Structure:
 - **science2u_agent.py** - Main agent implementation
@@ -214,7 +182,7 @@ Science2UCoordinator (Main Agent)
 - **State Management** - Persistent learning progress
 - **Observable Systems** - Comprehensive logging and monitoring
 
-## 🚀 Future Enhancements
+## Future Enhancements
 
 - **Visual Learning** - Integration with image and diagram generation
 - **Voice Interaction** - Speech-to-text and text-to-speech capabilities
@@ -223,13 +191,13 @@ Science2UCoordinator (Main Agent)
 - **Advanced Analytics** - Detailed learning analytics and insights
 - **Mobile App** - Native mobile application for on-the-go learning
 
-## 📝 License
+## License
 
-This project is part of the 5-Day AI Agents Intensive Course capstone project and is intended for educational purposes.
+This project is intended for educational purposes.
 
-## 🤝 Contributing
+## Contributing
 
-This is a capstone project demonstrating the application of ADK concepts. Feel free to fork and extend for your own educational purposes!
+This is a project demonstrating the application of ADK concepts. Feel free to fork and extend for your own educational purposes!
 
 ---
 
