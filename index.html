@@ -5,310 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Science2U</title>
   <style>
-    :root {
-      --navy: #102a43;
-      --blue: #2d72d9;
-      --cyan: #35b9d3;
-      --cream: #f7fbff;
-      --text: #243b53;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      min-height: 100vh;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 85% 15%, rgba(53, 185, 211, 0.18), transparent 24rem),
-        linear-gradient(135deg, #f8fbff 0%, #edf7fb 100%);
-    }
-
-    nav {
-      max-width: 1120px;
-      margin: auto;
-      padding: 24px 24px 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--navy);
-      font-weight: 800;
-      font-size: 1.2rem;
-      text-decoration: none;
-    }
-
-    .brand-mark {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      color: white;
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-    }
-
-    .github-link {
-      color: var(--navy);
-      text-decoration: none;
-      font-weight: 700;
-      padding: 10px 15px;
-      border: 1px solid #ccd8e4;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.75);
-    }
-
-    main {
-      max-width: 1120px;
-      min-height: calc(100vh - 90px);
-      margin: auto;
-      padding: 80px 24px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      align-items: center;
-      gap: 70px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 18px;
-      color: var(--blue);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      max-width: 700px;
-      color: var(--navy);
-      font-size: clamp(3.2rem, 7vw, 6.2rem);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
-    }
-
-    h1 span {
-      color: var(--blue);
-    }
-
-    .description {
-      max-width: 590px;
-      margin: 28px 0 36px;
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-      line-height: 1.7;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 20px;
-      border-radius: 12px;
-      font-weight: 800;
-      text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .button-primary {
-      color: white;
-      background: var(--blue);
-      box-shadow: 0 10px 24px rgba(45, 114, 217, 0.24);
-    }
-
-    .button-secondary {
-      color: var(--navy);
-      background: white;
-      border: 1px solid #d8e3ee;
-    }
-
-    .visual {
-      position: relative;
-      display: grid;
-      place-items: center;
-      min-height: 430px;
-    }
-
-    .orbit {
-      position: absolute;
-      width: 390px;
-      height: 390px;
-      border: 1px dashed #98b6c9;
-      border-radius: 50%;
-    }
-
-    .core {
-      position: relative;
-      z-index: 2;
-      width: 210px;
-      height: 210px;
-      display: grid;
-      place-items: center;
-      border-radius: 42%;
-      color: white;
-      font-size: 5rem;
-      background: linear-gradient(145deg, #397ae2, #38b7c9);
-      box-shadow: 0 28px 50px rgba(45, 114, 217, 0.28);
-      transform: rotate(-5deg);
-    }
-
-    .atom {
-      width: 90px;
-      height: 90px;
-      position: relative;
-      border: 4px solid white;
-      border-radius: 50%;
-      transform: rotate(45deg);
-    }
-
-    .atom::before,
-    .atom::after {
-      content: "";
-      position: absolute;
-      inset: 22px -24px;
-      border: 4px solid white;
-      border-radius: 50%;
-    }
-
-    .atom::after {
-      transform: rotate(60deg);
-    }
-
-    .chip {
-      position: absolute;
-      z-index: 3;
-      padding: 12px 16px;
-      border: 1px solid #dae6ef;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.94);
-      box-shadow: 0 12px 28px rgba(55, 86, 112, 0.12);
-      font-weight: 800;
-    }
-
-    .chip-one {
-      top: 48px;
-      right: 8px;
-    }
-
-    .chip-two {
-      bottom: 74px;
-      left: 0;
-    }
-
-    .chip-three {
-      right: 0;
-      bottom: 20px;
-    }
-
-    @media (max-width: 850px) {
-      main {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding-top: 55px;
-        text-align: center;
-      }
-
-      .description {
-        margin-inline: auto;
-      }
-
-      .actions {
-        justify-content: center;
-      }
-
-      .visual {
-        min-height: 380px;
-      }
-
-      .github-link {
-        font-size: 0.9rem;
-      }
-    }
-
-    @media (max-width: 500px) {
-      nav {
-        padding-inline: 16px;
-      }
-
-      main {
-        padding-inline: 16px;
-      }
-
-      .github-link {
-        display: none;
-      }
-
-      .orbit {
-        width: 310px;
-        height: 310px;
-      }
-
-      .chip-one {
-        right: 0;
-      }
-
-      .chip-two {
-        left: 0;
-      }
-    }
+    :root { --navy:#102a43; --blue:#2d72d9; --cyan:#35b9d3; --text:#243b53; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { min-height:100vh; font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--text); background:radial-gradient(circle at 85% 15%,rgba(53,185,211,.18),transparent 24rem),linear-gradient(135deg,#f8fbff,#edf7fb); }
+    nav { max-width:1120px; margin:auto; padding:24px 24px 12px; display:flex; align-items:center; justify-content:space-between; }
+    .brand { display:flex; align-items:center; gap:10px; color:var(--navy); font-weight:800; font-size:1.2rem; text-decoration:none; }
+    .brand-mark { width:38px; height:38px; display:grid; place-items:center; border-radius:50%; color:white; background:linear-gradient(135deg,var(--blue),var(--cyan)); }
+    .github-link { color:var(--navy); text-decoration:none; font-weight:700; padding:10px 15px; border:1px solid #ccd8e4; border-radius:999px; background:rgba(255,255,255,.75); }
+    main { max-width:1120px; min-height:calc(100vh - 90px); margin:auto; padding:50px 24px 80px; display:grid; grid-template-columns:.9fr 1.1fr; align-items:start; gap:48px; }
+    .intro { padding-top:85px; }
+    .eyebrow { display:inline-block; margin-bottom:18px; color:var(--blue); font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+    h1 { max-width:700px; color:var(--navy); font-size:clamp(3.2rem,6vw,5.5rem); line-height:.95; letter-spacing:-.06em; }
+    h1 span { color:var(--blue); }
+    .description { max-width:590px; margin:28px 0 36px; font-size:clamp(1.05rem,2vw,1.25rem); line-height:1.7; }
+    .topics { display:flex; flex-wrap:wrap; gap:8px; }
+    .topic { border:1px solid #d8e3ee; border-radius:999px; background:white; color:var(--navy); padding:9px 13px; cursor:pointer; font-weight:750; }
+    .topic:hover,.topic.active { border-color:var(--blue); background:#edf4ff; color:#1b5bb7; }
+    .agent-card { background:rgba(255,255,255,.94); border:1px solid #dce7ef; border-radius:24px; box-shadow:0 24px 55px rgba(55,86,112,.14); overflow:hidden; }
+    .agent-header { display:flex; align-items:center; gap:12px; padding:18px 20px; border-bottom:1px solid #e8eff5; }
+    .agent-status { width:10px; height:10px; border-radius:50%; background:#36a269; box-shadow:0 0 0 4px #dff3e7; }
+    .agent-header strong { color:var(--navy); }
+    .chat { height:390px; overflow-y:auto; padding:20px; display:flex; flex-direction:column; gap:12px; }
+    .message { max-width:88%; padding:12px 14px; border-radius:14px; line-height:1.5; white-space:pre-wrap; }
+    .bot { align-self:flex-start; background:#eef5fb; border-bottom-left-radius:4px; }
+    .user { align-self:flex-end; background:var(--blue); color:white; border-bottom-right-radius:4px; }
+    .composer { display:flex; gap:8px; padding:14px; border-top:1px solid #e8eff5; }
+    .composer input { flex:1; min-width:0; border:1px solid #d7e2ec; border-radius:11px; padding:12px 14px; font:inherit; outline:none; }
+    .composer input:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(45,114,217,.12); }
+    .send { border:0; border-radius:11px; background:var(--blue); color:white; font-weight:800; padding:0 16px; cursor:pointer; }
+    .progress { height:5px; background:#edf2f6; }
+    .progress-bar { height:100%; width:0; background:linear-gradient(90deg,var(--blue),var(--cyan)); transition:width .25s; }
+    @media(max-width:850px){ main{grid-template-columns:1fr; gap:24px; padding-top:25px} .intro{padding-top:10px;text-align:center} .topics{justify-content:center} }
   </style>
 </head>
 <body>
   <nav aria-label="Main navigation">
-    <a class="brand" href="#" aria-label="Science2U home">
-      <span class="brand-mark">S</span>
-      Science2U
-    </a>
-    <a class="github-link" href="https://github.com/thebravebasil/Science2U" target="_blank" rel="noopener noreferrer">
-      View on GitHub →
-    </a>
+    <a class="brand" href="#" aria-label="Science2U home"><span class="brand-mark">S</span>Science2U</a>
+    <a class="github-link" href="https://github.com/thebravebasil/Science2U" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
   </nav>
-
   <main>
-    <section>
+    <section class="intro">
       <p class="eyebrow">K–12 Science Learning</p>
       <h1>Science, <span>made simple.</span></h1>
-      <p class="description">
-        Science2U is a comprehensive science learning agent that makes curiosity-driven
-        exploration easier, clearer, and more engaging for every K–12 learner.
-      </p>
-      <div class="actions">
-        <a class="button button-primary" href="https://github.com/thebravebasil/Science2U" target="_blank" rel="noopener noreferrer">
-          Explore the project
-        </a>
-        <a class="button button-secondary" href="#learn">
-          Learn more
-        </a>
-      </div>
+      <p class="description">Choose a topic and begin an interactive Science2U quiz. Answers receive instant feedback and progress is tracked as you learn.</p>
+      <div class="topics" id="topics" aria-label="Science topics"></div>
     </section>
-
-    <section class="visual" id="learn" aria-label="Science illustration">
-      <div class="orbit"></div>
-      <div class="core" aria-hidden="true">
-        <div class="atom"></div>
+    <section class="agent-card" aria-label="Science2U agent">
+      <div class="agent-header"><span class="agent-status"></span><strong>Science2U Agent</strong></div>
+      <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+      <div class="chat" id="chat" role="log" aria-live="polite">
+        <div class="message bot">Hi! I’m Science2U. Choose a science topic to start your learning session.</div>
       </div>
-      <span class="chip chip-one">Physics</span>
-      <span class="chip chip-two">Biology</span>
-      <span class="chip chip-three">Chemistry</span>
+      <form class="composer" id="composer">
+        <input id="answerInput" autocomplete="off" placeholder="Type your answer…" aria-label="Answer">
+        <button class="send" type="submit">Send</button>
+      </form>
     </section>
   </main>
+  <script>
+    const questionBanks = {
+      "Chemistry":[["What is the atomic number of Carbon?","6"],["What is the chemical formula for water?","H2O"],["What type of bond forms between sodium and chlorine?","ionic bond"],["What is Avogadro's number?","6.022 × 10²³"],["What is the pH of pure water?","7"]],
+      "Environmental Science":[["What is the greenhouse effect?","trapping heat in Earth's atmosphere"],["What is biodiversity?","variety of life in ecosystems"],["What is deforestation?","clearing of forests"],["What is the water cycle?","continuous movement of water"],["What is climate change?","long-term changes in global climate patterns"]],
+      "Biology":[["What is the powerhouse of the cell?","mitochondria"],["What is the process by which plants make food?","photosynthesis"],["What is DNA an acronym for?","deoxyribonucleic acid"],["How many chambers does a human heart have?","4"],["What is the smallest unit of life?","cell"]],
+      "Physics":[["What is the unit of force?","newton"],["What is the acceleration due to gravity on Earth?","9.8 m/s²"],["What is the formula for kinetic energy?","½mv²"],["What is Ohm's law?","V = IR"],["What is the unit of energy?","joule"]],
+      "Astronomy":[["What is the closest star to Earth?","the sun"],["How many planets are in our solar system?","8"],["What is the largest planet?","jupiter"],["What is the name of our galaxy?","Milky Way"],["What is a comet?","an icy body that orbits the sun"]],
+      "Earth Science":[["What causes earthquakes?","movement of tectonic plates"],["What is the Earth's core mainly made of?","iron and nickel"],["What is erosion?","wearing away of rock and soil"],["What is the hardest mineral?","diamond"],["What is a fossil?","remains of ancient organisms"]],
+      "Engineering":[["What is a prototype?","an early model of a product"],["What is CAD?","Computer-Aided Design"],["What is stress in engineering?","force per unit area"],["What is civil engineering?","design and construction of infrastructure"],["What is biomedical engineering?","application of engineering to medicine"]],
+      "Forensic Analysis":[["What is DNA fingerprinting?","identification using DNA patterns"],["What is toxicology?","study of poisons and their effects"],["What is trace evidence?","small physical evidence at crime scenes"],["What is chain of custody?","documentation of evidence handling"],["What is digital forensics?","recovery of digital evidence"]],
+      "Oceanography":[["What percentage of Earth is covered by oceans?","71%"],["What is the deepest part of the ocean?","Mariana Trench"],["What causes ocean tides?","gravitational pull of the moon and sun"],["What is plankton?","small organisms that drift in water"],["What is coral bleaching?","loss of color in coral due to stress"]]
+    };
+
+    const topicsEl=document.getElementById("topics"), chat=document.getElementById("chat"), input=document.getElementById("answerInput"), form=document.getElementById("composer"), progressBar=document.getElementById("progressBar");
+    let topic=null, questions=[], index=0, correct=0;
+
+    Object.keys(questionBanks).forEach(name=>{ const button=document.createElement("button"); button.type="button"; button.className="topic"; button.textContent=name; button.onclick=()=>startTopic(name,button); topicsEl.appendChild(button); });
+
+    function addMessage(text,type){ const div=document.createElement("div"); div.className=`message ${type}`; div.textContent=text; chat.appendChild(div); chat.scrollTop=chat.scrollHeight; }
+    function ask(){ if(index>=questions.length){ addMessage(`Great work! You finished ${topic} with ${correct} correct answers out of ${questions.length}. Choose another topic to keep learning.`,"bot"); progressBar.style.width="100%"; topic=null; return; } addMessage(`Question ${index+1}: ${questions[index][0]}`,"bot"); }
+    function startTopic(name,button){ topic=name; questions=[...questionBanks[name]].sort(()=>Math.random()-.5); index=0; correct=0; progressBar.style.width="0"; document.querySelectorAll(".topic").forEach(b=>b.classList.remove("active")); button.classList.add("active"); addMessage(`Let’s explore ${name}! Answer each question as it appears.`,"bot"); ask(); input.focus(); }
+    function normalized(text){ return text.toLowerCase().replace(/[^a-z0-9.²%/= ]/g," ").replace(/\s+/g," ").trim(); }
+    form.addEventListener("submit",event=>{ event.preventDefault(); const answer=input.value.trim(); if(!answer)return; addMessage(answer,"user"); input.value=""; if(!topic){ addMessage("Choose a topic from the buttons above to begin.","bot"); return; } const expected=questions[index][1], a=normalized(answer), e=normalized(expected); if(a===e||e.includes(a)&&a.length>2||a.includes(e)&&e.length>2){ correct++; addMessage(`Correct! ${expected}.`,"bot"); } else { addMessage(`Not quite—the answer is ${expected}. Keep going!`,"bot"); } index++; progressBar.style.width=`${(index/questions.length)*100}%`; setTimeout(ask,350); });
+  </script>
 </body>
 </html>
