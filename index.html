@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Science2U</title>
+  <style>
+    :root {
+      --navy: #102a43;
+      --blue: #2d72d9;
+      --cyan: #35b9d3;
+      --cream: #f7fbff;
+      --text: #243b53;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 85% 15%, rgba(53, 185, 211, 0.18), transparent 24rem),
+        linear-gradient(135deg, #f8fbff 0%, #edf7fb 100%);
+    }
+
+    nav {
+      max-width: 1120px;
+      margin: auto;
+      padding: 24px 24px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+    }
+
+    .github-link {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 10px 15px;
+      border: 1px solid #ccd8e4;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
+    }
+
+    main {
+      max-width: 1120px;
+      min-height: calc(100vh - 90px);
+      margin: auto;
+      padding: 80px 24px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 700px;
+      color: var(--navy);
+      font-size: clamp(3.2rem, 7vw, 6.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .description {
+      max-width: 590px;
+      margin: 28px 0 36px;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: white;
+      background: var(--blue);
+      box-shadow: 0 10px 24px rgba(45, 114, 217, 0.24);
+    }
+
+    .button-secondary {
+      color: var(--navy);
+      background: white;
+      border: 1px solid #d8e3ee;
+    }
+
+    .visual {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 430px;
+    }
+
+    .orbit {
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      border: 1px dashed #98b6c9;
+      border-radius: 50%;
+    }
+
+    .core {
+      position: relative;
+      z-index: 2;
+      width: 210px;
+      height: 210px;
+      display: grid;
+      place-items: center;
+      border-radius: 42%;
+      color: white;
+      font-size: 5rem;
+      background: linear-gradient(145deg, #397ae2, #38b7c9);
+      box-shadow: 0 28px 50px rgba(45, 114, 217, 0.28);
+      transform: rotate(-5deg);
+    }
+
+    .atom {
+      width: 90px;
+      height: 90px;
+      position: relative;
+      border: 4px solid white;
+      border-radius: 50%;
+      transform: rotate(45deg);
+    }
+
+    .atom::before,
+    .atom::after {
+      content: "";
+      position: absolute;
+      inset: 22px -24px;
+      border: 4px solid white;
+      border-radius: 50%;
+    }
+
+    .atom::after {
+      transform: rotate(60deg);
+    }
+
+    .chip {
+      position: absolute;
+      z-index: 3;
+      padding: 12px 16px;
+      border: 1px solid #dae6ef;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 12px 28px rgba(55, 86, 112, 0.12);
+      font-weight: 800;
+    }
+
+    .chip-one {
+      top: 48px;
+      right: 8px;
+    }
+
+    .chip-two {
+      bottom: 74px;
+      left: 0;
+    }
+
+    .chip-three {
+      right: 0;
+      bottom: 20px;
+    }
+
+    @media (max-width: 850px) {
+      main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-top: 55px;
+        text-align: center;
+      }
+
+      .description {
+        margin-inline: auto;
+      }
+
+      .actions {
+        justify-content: center;
+      }
+
+      .visual {
+        min-height: 380px;
+      }
+
+      .github-link {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      nav {
+        padding-inline: 16px;
+      }
+
+      main {
+        padding-inline: 16px;
+      }
+
+      .github-link {
+        display: none;
+      }
+
+      .orbit {
+        width: 310px;
+        height: 310px;
+      }
+
+      .chip-one {
+        right: 0;
+      }
+
+      .chip-two {
+        left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Main navigation">
+    <a class="brand" href="#" aria-label="Science2U home">
+      <span class="brand-mark">S</span>
+      Science2U
+    </a>
+    <a class="github-link" href="https://github.com/thebravebasil/Science2U" target="_blank" rel="noopener noreferrer">
+      View on GitHub →
+    </a>
+  </nav>
+
+  <main>
+    <section>
+      <p class="eyebrow">K–12 Science Learning</p>
+      <h1>Science, <span>made simple.</span></h1>
+      <p class="description">
+        Science2U is a comprehensive science learning agent that makes curiosity-driven
+        exploration easier, clearer, and more engaging for every K–12 learner.
+      </p>
+      <div class="actions">
+        <a class="button button-primary" href="https://github.com/thebravebasil/Science2U" target="_blank" rel="noopener noreferrer">
+          Explore the project
+        </a>
+        <a class="button button-secondary" href="#learn">
+          Learn more
+        </a>
+      </div>
+    </section>
+
+    <section class="visual" id="learn" aria-label="Science illustration">
+      <div class="orbit"></div>
+      <div class="core" aria-hidden="true">
+        <div class="atom"></div>
+      </div>
+      <span class="chip chip-one">Physics</span>
+      <span class="chip chip-two">Biology</span>
+      <span class="chip chip-three">Chemistry</span>
+    </section>
+  </main>
+</body>
+</html>
